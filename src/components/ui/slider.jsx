@@ -79,14 +79,14 @@ const SliderPrimitive = {
   Range: React.forwardRef(({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn("absolute h-full bg-[rgba(87,80,227,0.8)]", className)}
+      className={cn("absolute h-full bg-[rgba(87,80,227,0.6)]", className)}
       {...props}
     />
   )),
   Thumb: React.forwardRef(({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn("block h-5 w-5 rounded-full border-2 border-[rgba(87,80,227,0.8)] bg-white ring-offset-white transition-colors focus-visible:outline-none", className)}
+      className={cn("block h-5 w-5 rounded-full border-2 border-[rgba(87,80,227,0.6)] bg-white ring-offset-white transition-colors focus-visible:outline-none", className)}
       {...props}
     />
   ))
@@ -115,7 +115,7 @@ const Slider = React.forwardRef(({ className, value, onValueChange, min = 0, max
     >
       <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-slate-100 px-2">
         <SliderPrimitive.Range 
-          className="absolute h-full bg-[rgba(178, 174, 255, 0.8)]" 
+          className="absolute h-full bg-[rgba(178, 174, 255, 0.4)]" 
           style={{ 
             width: `calc(${percentage} + 8px)`,
             left: '-8px'
@@ -123,7 +123,7 @@ const Slider = React.forwardRef(({ className, value, onValueChange, min = 0, max
         />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb 
-        className="absolute block h-5 w-5 rounded-full border-2 border-[rgba(87,80,227,0.8)] bg-white ring-offset-white transition-colors focus-visible:outline-none" 
+        className="absolute block h-5 w-5 rounded-full border-2 border-[rgba(87,80,227,0.4)] bg-white ring-offset-white transition-colors focus-visible:outline-none" 
         style={{ 
           left: `clamp(8px, calc(${percentage} + 8px), calc(100% - 8px))`, 
           transform: "translateX(-50%)"
